@@ -10,9 +10,9 @@
 # make sure selected translation function supports your language and so that codes of your languages are correct
 # for instance Pons doesn't support Hebrew, Google and Reverso do, but their codes are different: 'iw' and 'he' respectively
 # translate from language
-lang_from = 'de'
+lang_from = 'en'
 # translate to language
-lang_to = 'en'
+lang_to = 'ml'
 
 # dictionaries to use, one or more
 # or other function's name you might write that will return ([[word, translation]..], [morphology = '', gender = ''])
@@ -25,7 +25,7 @@ lang_to = 'en'
 #	morfix (he/en en/he)
 #	redensarten (redensarten-index.de - German idioms etc.)
 #	tab_divided_dict - simple offline dictionary with word \t translation per line
-translation_function_names = ['dict_cc', 'pons']
+translation_function_names = ['tab_divided_dict']
 # for automatic switch to Hebrew. Skip if it isn't your language.
 translation_function_names_2 = ['google', 'morfix']
 
@@ -38,7 +38,7 @@ number_of_translations_to_save = 50
 listen_via = 'gtts'
 
 # path to the offline dictionary
-tab_divided_dict_fname = '~/d/python_shit/mpv/scripts/z.dict'
+tab_divided_dict_fname = '~/.config/mpv/scripts/dicml.dict'
 # strip <.*?>
 tab_divided_dict_remove_tags_B = True
 
@@ -48,7 +48,7 @@ extend_subs_duration2max_B = True
 # limit extension duration in seconds; N == 0: do not limit
 extend_subs_duration_limit_sec = 15
 # show interSubs only in fullscreen
-hide_when_not_fullscreen_B = True
+hide_when_not_fullscreen_B = False
 
 # interval between checking for the next subtitle; in seconds
 update_time = .01

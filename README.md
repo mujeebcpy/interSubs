@@ -4,10 +4,10 @@ interSubs
 Interactive subtitles for [mpv](https://github.com/mpv-player/mpv), that was made to help study languages.  
 Easily tweaked and customizable.
 
-v. 2.3 - Changelog at the bottom.  
-If Qt version doesn't work for you - use [Tk](https://github.com/oltodosel/interSubs/tree/master/Tk). It is abandoned, but still works.
+This is a fork of [this plugin](https://github.com/oltodosel/interSubs)
+This is especially configured for Malayalam Dictionary. There are so many dictionaries are available as given below. dictml.dict is an english to malayalam offline tab divided dictionary. you can also enable google translate too. but it will take more time and need good internet connection, so it is not activated by default. you can edit and activate it in interSubs_config.py
+open interSubs_config.py and go to line number 28. change it into `translation_function_names = ['tab_divided_dict','google']`
 
-![z 00_00_5 75-00_00_19 96](https://user-images.githubusercontent.com/10230453/38359595-7f56acc0-38d1-11e8-9a65-257466a44e08.gif)
 
 * Supported dictionaries:
 	* https://dict.cc/
@@ -55,7 +55,8 @@ Requirements
 
 Installation
 ------------
-* `mv interSubs.py interSubs.lua interSubs_config.py ~/.config/mpv/scripts/;`
+* `mv interSubs.py interSubs.lua interSubs_config.py dicml.dict ~/.config/mpv/scripts/;`
+For any Additional Changes do the following
 * Edit configuration file interSubs_config.py
 * Edit interSubs.lua to add option where interSubs will start automatically. 
 * For Mac also edit configuration at interSubs.lua
@@ -84,38 +85,3 @@ Important
 -----
 * May have issues working in a multi-monitor system.
 
-Changelog
------
-* 2.0a
-	* Configs are incompatible with previous version.
-	* Tk is abandoned in favor of Qt.
-		* Background can be fully transparent or semi/fully opaque.
-		* Rendering is faster than with Tk.
-		* requires pyqt5 for python 3
-			* `pip install pyqt5` / `pacman -S python-pyqt5`
-		* requires composite manager for not solid bg; `xcompmgr` or sth.
-		* tested on Openbox, i3, KDE(kwin).
-		* On KDE(kwin) go to composite and uncheck "Allow applications to block compositing". [screenshot](https://iwf1.com/wordpress/wp-content/uploads/2017/09/Disable-applications-override-compositor-KDE.jpg)
-	* No more stalling when pointing on a wrong word; those words will be translated and saved in background.
-	* R2L isn't ready yet.
-	* Option to not save translations on the disk was removed.
-	* Noun colorization was removed.
-	* Randomization of translations was removed.
-	* Option to show N of previous subtitles is suspended for now, I might add it in the future.
-	* Tk version won't be updated unless something critical happens.
-* 2.1
-	* R2L support (checked on Hebrew; works more or less).
-	* Minor corrections.
-* 2.2
-	* Added https://dict.leo.org/ - de<>en/es/fr/it/pl/pt/ru/zh(cn)
-	* Minor corrections.
-
-* 2.3
-	* Added option to limit extension of subtitles during long scenes without talking.
-		* `extend_subs_duration_limit_sec = 15`
-	* Updated https://translate.google.com/
-		* Now it gives complete output instead of single result.
-		* `mtranslate_google` -> `google`
-	* Added http://www.morfix.co.il/
-		* `morfix`
-	* Minor error corrections.

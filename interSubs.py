@@ -562,6 +562,7 @@ def leo(word):
 
 # offline dictionary with word \t translation
 def tab_divided_dict(word):
+	word = word.lower()
 	if word in offdict:
 		tr = re.sub('<.*?>', '', offdict[word]) if config.tab_divided_dict_remove_tags_B else offdict[word]
 		tr = tr.replace('\\n', '\n').replace('\\~', '~')
